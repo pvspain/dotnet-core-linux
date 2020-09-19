@@ -1,5 +1,10 @@
 # Microsoft .Net Core on Linux
 
+- [Microsoft .Net Core on Linux](#microsoft-net-core-on-linux)
+  - [References](#references)
+  - [Installation](#installation)
+  - [HelloWorld - console](#helloworld---console)
+
 ## References
 
 - [Install .NET Core SDK on Ubuntu][2]
@@ -33,17 +38,31 @@ EOF
 
 ```
 
-## Hello World - console
+## HelloWorld - console
 
 ```bash
 # Create new directory...
 PROJECT="hello-world"
 mkdir --parents $PROJECT && pushd $PROJECT
-# Initialise console project..
-dotnet new console
+
+## Initialise console project..
+# Creates a project based on the name of the current directory, $PROJECT
+# --force will clobber any existing:
+# ${PROJECT}.csproj
+# Program.cs
+dotnet new console --force
+
+## Boiler-plate build-run cycle commands...
+# Ensure dependencies and build
+dotnet restore && \
+dotnet build
+# Run
+dotnet run
+
 popd
 
 ```
+
 
 [1]: https://www.dotnetforall.com/creating-my-first-net-core-cli-project/
 [2]: https://snapcraft.io/install/dotnet-sdk/ubuntu

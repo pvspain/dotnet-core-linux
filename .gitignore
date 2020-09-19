@@ -1,4 +1,6 @@
 # VS Code configuration
 *.code-workspace
+.vscode/
 # .Net artefacts
-**obj/
+obj/
+bin/
