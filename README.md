@@ -2,7 +2,8 @@
 
 ## References
 
-- [Install .NET Core SDK on Ubuntu]
+- [Install .NET Core SDK on Ubuntu][2]
+- [Kicking the tyres][1]
 
 ## Installation
 
@@ -29,6 +30,18 @@ EOF
 
 # Re-source ~/.bashrc...
 . ~/.bashrc
+
+```
+
+## Hello World - console
+
+```bash
+# Create new directory...
+PROJECT="hello-world"
+mkdir --parents $PROJECT && pushd $PROJECT
+# Initialise console project..
+dotnet new console
+popd
 
 ```
 
